@@ -1,0 +1,95 @@
+# open-schema.yml
+# Attribution Metadata Schema for Generative AI Outputs
+# Version: 1.0.0
+# License: CC BY 4.0 with Attribution and Optional Royalty clause
+
+version: "1.0.0"
+
+schema:
+  context: "https://schema.createdbyhumans.org/v1"
+  type: "attribution_log"
+  description: >
+    Metadata schema for recording human creator contributions
+    used in training or influencing AI-generated outputs. Enables
+    traceability, auditing, and attribution-based compensation.
+
+output_metadata:
+  uuid: "string"         # Unique identifier for this output
+  generation_timestamp: "datetime"
+  model_id: "string"     # Model version or identifier (e.g., gpt-4o, stable-diffusion-v3)
+  modality: "string"     # One of: ["text", "image", "audio", "video", "code", "multimodal"]
+  output_hash: "string"  # Optional SHA256 or content-based fingerprint of output
+  attribution_method: "string"  # e.g., ["embedding-similarity", "influence-functions", "Shapley-values", "manual"]
+
+contributors:
+  - id: "string"  # Optional persistent ID, e.g., ORCID, ISNI, UUID
+    name: "string"
+    role: "string"  # e.g., "author", "artist", "composer", "photographer", "dataset-curator"
+    work_title: "string"
+    work_uri: "string"  # URL or DOI to original content
+    attribution_score: "float"  # Relative contribution score (e.g., 0.0–1.0)
+    royalty_eligible: "boolean"
+    license_type: "string"  # e.g., "CC-BY-4.0", "All rights reserved", "Public Domain"
+    consent_status: "string"  # ["granted", "revoked", "unknown"]
+    usage_type: "string"  # e.g., "style influence", "content similarity", "direct quotation"
+    evidence:
+      - type: "string"  # e.g., "embedding_match", "token_overlap", "prompt_correlation"
+        reference: "string"  # Link to audit logs or computed influence metrics
+        confidence: "float"  # Confidence level (0.0–1.0)
+
+aggregated_analytics:
+  total_human_contribution_score: "float"  # ∑ of all contributor scores
+  dominant_contributor_id: "string"        # ID or name of the highest contributor
+  top_contributors:                        # Optional summary of key influences
+    - name: "string"
+      attribution_score: "float"
+
+audit_trail:
+  generated_by: "string"        # System or API responsible for attribution generation
+  attribution_model_version: "string"  # Attribution engine version (not the AI model)
+  audit_hash: "string"          # Integrity hash of full attribution log
+  audit_uri: "string"           # Optional off-chain or on-chain URI for verifiability
+  timestamp: "datetime"
+
+compliance_flags:
+  attribution_required: true    # Whether attribution is legally or contractually required
+  royalty_required: false       # Whether royalty payout is triggered
+  public_registry_reference:    # If present, points to creator registry entries
+    - creator_id: "string"
+      registry_uri: "string"    # URL to licensing or royalty system (e.g., Content ID, IPFS, blockchain)
+
+legal_notice: >
+  This metadata is provided to fulfill the moral and legal rights of
+  human contributors whose works or styles may have influenced the
+  generation of this AI output. Redistribution or commercial use may
+  require further licensing or payment depending on the contributors’
+  licensing terms and jurisdiction.
+
+license:
+  type: "CC BY 4.0 with Attribution and Optional Royalty clause"
+  terms: >
+    You are free to share and adapt this metadata for any purpose,
+    including commercial use, provided you give appropriate credit
+    to the original human contributors, indicate if changes were made,
+    and comply with any additional licensing terms specified by the
+    contributors. If the metadata is used in a commercial product,
+    you may be required to pay royalties or fees as specified by the
+    contributors' terms. For more details, see the full license at
+    https://creativecommons.org/licenses/by/4.0/legalcode 
+  or contact the contributors directly.
+  attribution: >
+    When using this metadata, please ensure that you provide clear
+    attribution to the human contributors listed, including their
+    names, roles, and any specified work titles or URIs. This is
+    essential for maintaining transparency and respecting the rights
+    of those who contributed to the AI-generated content.
+  royalty_clause: >
+    If the AI-generated output is used in a commercial context,
+    you may be required to pay royalties or fees to the contributors
+    based on their specified terms. This clause is optional and
+    depends on the individual contributor's licensing choices.
+  contact: >
+    For any questions regarding this metadata, licensing terms,
+    or contributor rights, please contact the original contributors
+    directly through the provided URIs or registry references.    
+  
