@@ -1,9 +1,9 @@
-A Declaration for Human Memory in the Age of Artificial Intelligence
-
+**A Declaration for Human Memory in the Age of Artificial Intelligence
+**
     AI stands on the shoulders of giants — trained on the labor, insight, and imagination of countless human minds.
 
-Executive Summary
-
+**Executive Summary
+**
 Generative AI systems, trained on massive corpora of human-made work, are increasingly producing content without attribution or compensation to the original creators. This omission is not a trivial oversight — it risks severing cultural continuity and undermining human dignity.
 
 This declaration proposes embedding attribution as a foundational principle in AI development. Attribution is a prerequisite for:
