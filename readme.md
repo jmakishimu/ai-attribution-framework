@@ -1,5 +1,5 @@
-**A Declaration for Human Memory in the Age of Artificial Intelligence
-**
+A Declaration for Human Memory in the Age of Artificial Intelligence
+
     AI stands on the shoulders of giants — trained on the labor, insight, and imagination of countless human minds.
 
 **Executive Summary
